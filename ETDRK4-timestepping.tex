@@ -1,0 +1,313 @@
+% !Mode:: "TeX:UTF-8"
+
+% !TEX TS-program = latex
+% !BIB TS-program = bibtex
+% !TEX encoding = UTF-8 Unicode
+
+
+
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{lineno}
+%\usepackage[notcite,notref]{showkeys}
+%\usepackage[notcite,notref]{showkeys}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{natbib}
+
+\usepackage{epsfig}
+\usepackage[mathscr]{eucal}
+
+
+
+
+\usepackage{hyperref}
+\hypersetup{
+	hyperindex,
+	breaklinks,
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=magenta,
+%	allcolors=black,
+	bookmarks=true,
+	bookmarksopen=true,
+	bookmarksopenlevel=2,
+	pdfstartpage={1},
+	pdfstartview={FitH},
+	pdfview={FitH 0},%pdfstartview=FitH,pdfview=FitH,%pdfstartview={XYZ null null 1},
+	pdfauthor={N. C. Constantinou},
+	pdftitle={EDTRK4 time stepping notes},
+ }
+%\nofiles
+%\expandafter\ifx\csname package@font\endcsname\relax\else
+% \expandafter\expandafter
+% \expandafter\usepackage
+% \expandafter\expandafter
+% \expandafter{\csname package@font\endcsname}%
+%\fi
+%\usepackage[all]{hypcap}	%do not use with amestoc single column
+\usepackage{doi}
+
+
+
+
+
+
+\bibliographystyle{plain}
+
+%% For lucida bright
+%\usepackage[T1]{fontenc}
+%\usepackage{lucidabr}
+\usepackage{bm}
+%%%
+\usepackage{mdframed}
+
+\usepackage{color,amssymb,amsmath,amsthm}
+
+\usepackage{epsfig}
+\usepackage[mathscr]{eucal}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\sqr}{\mbox{sqr}}
+\newcommand{\saw}{\mbox{saw}}
+\newcommand{\ind}{\mbox{ind}}
+\newcommand{\sgn}{\mbox{sgn}}
+\newcommand{\erfc}{\mbox{erfc}}
+\newcommand{\erf}{\mbox{erf}}
+
+%% An average
+\newcommand{\avg}[1]{\mathrm{avg}[ {#1} ]}
+%% The right way to define new functions
+\newcommand{\sech}{\mathop{\rm sech}\nolimits}
+\newcommand{\cosech}{\mathop{\rm cosech}\nolimits }
+
+%% A nice definition
+\newcommand{\defn}{\ensuremath{\stackrel{\mathrm{def}}{=}}}
+%%%%%%%%% %%%%
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+
+
+
+%% Various boldsymbols
+\newcommand{\bx}{\boldsymbol{x}}
+\newcommand{\by}{\boldsymbol{y}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\ba}{\boldsymbol{a}}
+\newcommand{\bb}{\boldsymbol{b}}
+\newcommand{\bc}{\boldsymbol{c}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bk}{\boldsymbol{k}}
+\newcommand{\bX}{\boldsymbol{X}}
+\newcommand{\br}{\boldsymbol{r}}
+\newcommand{\J}{\boldsymbol{\mathsf{J}}}
+\newcommand{\G}{\boldsymbol{\mathsf{G}}}
+\newcommand{\bA}{\ensuremath {\boldsymbol {A}}}
+\newcommand{\bU}{\ensuremath {\boldsymbol {U}}}
+\newcommand{\bE}{\ensuremath {\boldsymbol {E}}}
+\newcommand{\bJ}{\ensuremath {\boldsymbol {J}}}
+\newcommand{\bXX}{\ensuremath {\boldsymbol {\mathcal{X}}}}
+\newcommand{\bFF}{\ensuremath {\boldsymbol {F}}}
+\newcommand{\bF}{\ensuremath {\boldsymbol {F}^{\sharp}}}
+\newcommand{\bL}{\ensuremath {\boldsymbol {L}}}
+\newcommand{\bI}{\ensuremath {\boldsymbol {I}}}
+\newcommand{\bN}{\ensuremath {\boldsymbol {N}}}
+\newcommand{\bSigma}{\ensuremath {\boldsymbol {\Sigma}}}
+\newcommand{\kmax}{\ensuremath{k_{\mathrm{max}}}}
+
+
+\providecommand\bnabla{\boldsymbol{\nabla}}
+\providecommand\bcdot{\boldsymbol{\cdot}}
+
+
+
+\def\ii{{\rm i}}
+\def\dd{{\rm d}}
+\def\ee{{\rm e}}
+\def\DD{{\rm D}}
+%%% Cals here %%%%%
+
+%%%%%  Euler caligraphics %%%%%
+\newcommand{\A}{\mathscr{A}}
+\newcommand{\B}{\mathscr{B}}
+\newcommand{\E}{\mathscr{E}}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\K}{\mathscr{K}}
+\newcommand{\N}{\mathscr{N}}
+\newcommand{\U}{\mathscr{U}}
+\newcommand{\LL}{\mathscr{L}}
+\newcommand{\M}{\mathscr{M}}
+\newcommand{\T}{\mathscr{T}}
+%%\renewcommand{\O}{\mathscr{O}}
+
+
+
+\def\la{\langle}
+\def\ra{\rangle}
+
+\def\laa{\left \langle}
+
+\def\raa{\right \rangle}
+
+
+\newcommand{\st}{\ensuremath{\digamma}}
+\newcommand{\hzon}{\ensuremath{h_{\mathrm{zon}}}}
+
+\newcommand{\lap}{\ensuremath{\triangle}}
+\newcommand{\p}{\ensuremath{\partial}}
+\newcommand{\half }{\tfrac{1}{2}}
+\newcommand{\grad}{\ensuremath{\boldsymbol {\nabla}}}
+\newcommand{\pde}{\textsc{pde}}
+\newcommand{\ode}{\textsc{ode}}
+\newcommand{\cc}{\textsc{cc}}
+\newcommand{\dc}{\textsc{dc}}
+\newcommand{\dbc}{\textsc{dbc}}
+\newcommand{\byu}{\textsc{byu}}
+\newcommand{\rhs}{\textsc{rhs}}
+\newcommand{\lhs}{\textsc{lhs}}
+\newcommand{\com}{\, ,}
+\newcommand{\per}{\, .}
+
+
+
+
+\newcommand{\z}{\zeta}
+\newcommand{\h}{\eta}
+\renewcommand{\(}{\left(}
+\renewcommand{\[}{\left[}
+\renewcommand{\)}{\right)}
+\renewcommand{\]}{\right]}
+\newcommand{\<}{\left\langle}
+\renewcommand{\>}{\right\rangle}
+\renewcommand{\A}{\mathcal{A}}
+\renewcommand{\L}{\mathcal{L}}
+\renewcommand{\N}{\mathcal{N}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\transp}{\textrm{T}}
+
+
+\begin{document}
+
+
+
+
+\title{EDTRK4 time stepping notes}
+
+\author{
+Navid Constantinou \thanks {Scripps Institution of Oceanography,
+University of California at San Diego, La Jolla, CA
+92093--0230, USA.
+%\protect\url{email:wryoung@ucsd.edu}.
+}
+}
+
+
+\maketitle
+
+\section{The problem}
+%$u(\bx,t)=\sum_{\bk} \tilde u_{\bk}(t) \ee^{\ii \bk \bcdot \bx}$
+
+Say we want to solve numerically the following differential equation satisfied by $u(\bx,t)$:
+\beq
+\partial_t u  = \L(u)  + \N\(u,t\)\com\label{eq1}
+\eeq
+where $\L$ is a linear operator acting on $u$ and $\N$ a nonlinear operator. Consider a discretization so that $u$ is described by the column vector $\bu$. This correspondence is symbolically written $u(x,t)\leftrightarrow\bu(t)$ or just $u\leftrightarrow\bu$. This way~\eqref{eq1} becomes:
+\beq
+\partial_t \bu  = \bL \bu  + \bN \( \bu,t\)\com\label{eq2}
+\eeq
+where $\bL$ is a matrix acting on $\bu$ so that $\bL \bu\leftrightarrow \L(u)$ and $\bN$ is a nonlinear operator acting on $\bu$ and returning a column vector $\bN \( \bu,t\)\leftrightarrow \N(u,t)$.
+
+Consider now the variable ${\bv} = \ee^{-\bL t}{\bu}$ which satisfies:
+\beq
+\partial_t{\bv} =  \ee^{-\bL t}\bN\(\ee^{\bL t}{\bv},t\)\per
+\eeq
+The idea is the following: We will time-step~\eqref{eq2} using an RK4 time-stepping scheme for solving the nonlinear part, i.e. solving for variable ${\bv}$ and then use the (exact) propagator $\ee^{\bL t}$ to solve for the linear part as ${\bu}=e^{\bL t}{\bv}$~\citep{Cox-Matthews-2002}. If ${\bu}_n$ is the value of $\bu(t)$ at time $t=n h$, where $h$ is the time-step, then ${\bu}_{n+1}$ is given as:
+\begin{align}
+{\bu}_{n+1} = \ee^{\bL h} {\bu}_n + f_u \bN({\bu}_n,t_n) + 2f_{ab}\[\bN({\ba}_n,t_n+h/2)+\bN({\bb}_n,t_n+h/2)\vphantom{\dot W} \] + f_c\, \bN({\bc}_n,t_n+h)\com\label{eq:u_n+1}
+\end{align}
+where\begin{subequations}
+\begin{align}
+\ba_n &= \ee^{\bL h/2} \bu_n + \bL^{-1}\(\ee^{\bL h/2} -\bI \) \bN(\bu_n,t_n) \com\\
+\bb_n &= \ee^{\bL h/2} \bu_n + \bL^{-1}\(\ee^{\bL h/2} -\bI \) \bN(\ba_n,t_n+h/2) \com\\
+\bc_n &= \ee^{\bL h/2} \ba_n + \bL^{-1}\(\ee^{\bL h/2} -\bI \) \[ 2\bN(\bb_n,t_n+h/2) -\bN(\bu_n,t_n)\]\com\\
+f_u&= h^{-2}\bL^{-3}\left\{-4-\bL h+\ee^{\bL h}\[4-3\bL h+(\bL h)^2 \]\right\}\com\\
+f_{ab}&= h^{-2}\bL^{-3}\[2+\bL h+\ee^{\bL h}\(-2+\bL h\)\]\com\\
+f_c &= h^{-2}\bL^{-3}\[-4-3\bL h -(\bL h)^2+\ee^{\bL h}\(4-\bL h\)\]\per
+\end{align}\label{eq:EDTRK4coeffs}\end{subequations}
+
+The last 4 terms on the r.h.s. of~\eqref{eq:u_n+1} are just the RK4 approximation of the term
+\beq
+e^{\bL h} \int_{nh}^{(n+1)h} e^{-\bL \tau} \bN\(\vphantom{\dot{W}} u(t_n+\tau),t_n+\tau\)\,\dd\tau\per
+\eeq
+
+
+In the limit $\bL\to0$ we should recover the RK4 time-step. Indeed:\begin{subequations}
+\begin{align}
+\ba_n&\to \bu_n + \frac{h}{2} \bN(\bu_n,t_n)\com\\
+\bb_n&\to \bu_n + \frac{h}{2} \bN(\ba_n,t_n+h/2)\com\\
+\bc_n&\to \bu_n + h \bN(\bb_n,t_n+h/2)\com
+\end{align}
+while
+\beq
+f_u\to h/6~,~~f_{ab}\to h/6~,~~f_c\to h/6\com
+\eeq\end{subequations}
+and after some fiddling around we can see that this gives the RK4 time-step.
+
+\vspace{1em}
+
+%Note that if we did not choose to describe $u$ in terms of Fourier components and discretized~\eqref{eq1} in physical space then we would again end up to an equation in the form of~\eqref{eq2} but with $\bu$ now the column vector with the values of $u$ at various points of our domain and $\bL$ and $\bN$ would be different.
+%
+%\vspace{1em}
+
+However, there is a catch in calculating the coefficients~\eqref{eq:EDTRK4coeffs}. There are a lot of cancelation errors, especially when the eigenvalues of $\bL$ are close to zero, since in that case we are dividing something vanishingly small over something also vanishingly small. The way over that is to calculate these coefficients by means of complex calculus~\citep{Kassam-Trefethen-2005}. For example, any function of $\bL$ can be evaluated as
+\beq
+f(\bL) =\frac1{2\pi \ii} \int_{\Gamma} f(z)\,(z\bI-\bL)^{-1}\,\dd z\com
+\eeq
+where $\bI$ is the identity matrix and $\Gamma$ is any contour enclosing all eigenvalues of $\bL$ in the complex plane. This is the generalization of Cauchy's theorem for functions of matrices.
+
+
+\section{An example}
+
+Consider the barotropic vorticity equation:
+\beq
+\partial_t \z + J(\psi,\z+\beta y) = -\mu \z - (-1)^h \nu_{2h} \lap^{h}\z\per\label{eq:bar}
+\eeq
+with $J(\psi,\z)\defn \psi_x\z_y-\psi_y\z_x$ and $\z\defn\lap\psi$. Consider the Fourier expansion of the vorticity field:
+\beq
+\z(\bx,t)=\sum_{\bk}\tilde{\z}_{\bk}(t)\ee^{\ii\bk\bcdot\bx}\ ,
+\eeq
+and describe the vorticity field by means of its Fourier coefficients. Written in terms of the Fourier components of $\z(\bx,t)=\sum_{\bk}\tilde{\z}_{\bk}(t)\ee^{\ii\bk\bcdot\bx}$~\eqref{eq:bar} takes the form:
+\beq
+\partial_t \tilde{\z}_{\bk} =\[ - (\mu+\nu_{2h} k^{2h}) + \frac{\ii\beta k_x}{k^2}\]\tilde{\z}_{\bk}  - [\widetilde{J(\psi,\z)}]_{\bk}\com\label{eq:bar_four}
+\eeq
+where $ [\widetilde{J(\psi,\z)}]_{\bk}$ denotes the Fourier component of $J(\psi,\z)$. From~\eqref{eq:bar_four} we see that in this case the matrix $\bL$ is diagonal, something that would not be true if we did not chose to describe the vorticity in terms of its Fourier components and instead discretized the vorticity field in physical space.
+
+The fact that $\bL$ is diagonal simplifies the computations of coefficients~\eqref{eq:EDTRK4coeffs} immensely since the action of any function $f(\bL)$ on $\bu$ can be computerd element--by--element. Therefore, all matrix operations in~\eqref{eq:EDTRK4coeffs} simplify to just operations on the elements of the diagonal of $\bL$. For example, the matrix integral
+\beq
+f(\bL) =\frac1{2\pi \ii} \int_{\Gamma} f(z)\,(z\bI-\bL)^{-1}\,\dd z\com
+\eeq
+reduces in a simple integral for each element of the diagonal of $\bL$, denoted by $L_{\bk}$,
+\beq
+f(L_{\bk}) =\frac1{2\pi \ii} \int_{\Gamma_{\bk}} \frac{f(z)\,\dd z}{z-L_{\bk}}\per
+\eeq
+In the above we are able to chose a different integration contour $\Gamma_{\bk}$ for each element of $\bL$. Specifically, we choose as $\Gamma_{\bk}$ for each integral the unit circle around its integrand pole,
+\beq
+\Gamma_{\bk} =\left\{ L_{\bk}+\ee^{2\pi\ii w}\;:\:0<w\le 1  \right\}\com
+\eeq
+which implies
+\beq
+f\(L_{\bk}\) = \int_0^{1} f\(L_{\bk}+\ee^{2\pi\ii w}\)\,\dd w \per
+\eeq
+Using $M$ points compute the integral, i.e. $w\in\{1/M,\dots,(M-1)/M,1\}$ we get that:
+\beq
+f\(L_{\bk}\) \approx \frac1{M}\sum_{m=1}^M f\(L_{\bk}+\ee^{2\pi\ii m/M}\) \per\label{eq:sumM}
+\eeq
+The sum~\eqref{eq:sumM} exponentially converges to the actual value of the integral therefore even $M=32$ or $M=64$ points are usually enough to give machine precision.
+
+
+
+\bibliography{ETDRK4biblio}
+
+\end{document}
